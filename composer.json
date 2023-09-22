@@ -1,0 +1,21 @@
+{
+    "name": "slims/opac-template-skelton",
+    "description": "A starter template without any styling components",
+    "type": "slims-template",
+    "license": "GPLv3",
+    "autoload": {
+        "psr-4": {
+            "SLiMS\\Template\\Skelton\\": "src/",
+            "SLiMS\\Template\\Sections\\": "sections/",
+            "SLiMS\\Template\\Components\\": "components/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Drajat Hasan",
+            "email": "drajathasan20@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
