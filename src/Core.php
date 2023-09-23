@@ -3,7 +3,7 @@
  * @author Drajat Hasan
  * @email drajathasan20@gmail.com
  * @create date 2023-09-23 10:07:43
- * @modify date 2023-09-23 10:07:43
+ * @modify date 2023-09-23 15:21:57
  * @desc Template skelton engine
  */
 namespace SLiMS\Template\Skelton;
@@ -58,6 +58,19 @@ class Core
     }
 
     /**
+     * Register another pages to processed 
+     * by a section
+     *
+     * @param string $name
+     * @param string $class
+     * @return void
+     */
+    public function registerBasicPage(string $name, string $class):void
+    {
+        $this->currentPage[$name] = $class;
+    }
+
+    /**
      * redering content to each section instance
      *
      * @param Opac $opac
@@ -69,6 +82,8 @@ class Core
 
         if ($sectionClass !== null) {
             $section = new $sectionClass(property: $this->property);
+        } elseif ($sectionClass === null && count($_GET)) {
+            $section = new Content(property: $this->property);
         } else {
             $section = new Home(property: $this->property);
         }
