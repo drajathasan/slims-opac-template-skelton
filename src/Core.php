@@ -54,7 +54,7 @@ class Core
 
         $files = [
             'biblio_list_template.php', 'detail_template.php',
-            'login_template.php', 'news_template.php',
+            'login_template.inc.php', 'news_template.php',
             'visitor_template.php'
         ];
 
