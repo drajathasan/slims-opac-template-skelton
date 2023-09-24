@@ -7,6 +7,7 @@ class Layout extends AbstractComponent
 {
     public function getOutput():string
     {
+        $script = $this->property?->script??'';
         $this->output = <<<HTML
         <!DOCTYPE Html>
         <html>
@@ -16,6 +17,7 @@ class Layout extends AbstractComponent
             </head>
             <body>
                 {$this->property->maincontent}
+                {$script}
             </body>
         </html>
         HTML;
