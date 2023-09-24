@@ -24,7 +24,7 @@ $template->render($opac??$this);
 ```
 4. Next you need composer to install this packages.
 ```bash
-composer require slims/opac-template-skelton
+composer require drajathasan/slims-opac-template-skelton
 ```
 5. Login into admin area, and change template in theme menu.
 6. Choose "base" then open OPAC again.
