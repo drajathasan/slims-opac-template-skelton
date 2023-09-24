@@ -3,7 +3,7 @@
  * @author Drajat Hasan
  * @email drajathasan20@gmail.com
  * @create date 2023-09-23 10:07:43
- * @modify date 2023-09-23 15:21:57
+ * @modify date 2023-09-23 22:33:39
  * @desc Template skelton engine
  */
 namespace SLiMS\Template\Skelton;
@@ -43,6 +43,24 @@ class Core
 
         $this->currentPage = basename($_GET['p']??$_GET['search']??Home::class);
         $this->property = new \stdClass;
+        $this->setupBasicFile();
+    }
+
+    private function setupBasicFile()
+    {
+        if (file_exists($this->pathOfTemplate . 'detail_template.php')) return;
+        
+        if (!is_writable($this->pathOfTemplate)) die('Path ' . $this->pathOfTemplate . ' cannot be written!');
+
+        $files = [
+            'biblio_list_template.php', 'detail_template.php',
+            'login_template.php', 'news_template.php',
+            'visitor_template.php'
+        ];
+
+        foreach($files as $file) {
+            copy(dirname(__DIR__) . DS . $file, $this->pathOfTemplate . $file);
+        }
     }
 
     /**

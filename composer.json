@@ -8,7 +8,8 @@
             "SLiMS\\Template\\Skelton\\": "src/",
             "SLiMS\\Template\\Sections\\": "sections/",
             "SLiMS\\Template\\Components\\": "components/"
-        }
+        },
+        "files": ["src/tools.php"]
     },
     "authors": [
         {
