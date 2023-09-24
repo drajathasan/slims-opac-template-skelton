@@ -85,7 +85,7 @@ class Core
      */
     public function registerBasicPage(string $name, string $class):void
     {
-        $this->currentPage[$name] = $class;
+        $this->basicPages[$name] = $class;
     }
 
     /**
